@@ -35,6 +35,9 @@
 #include "MQX1.h"
 #include "SystemTimer1.h"
 #include "SM1.h"
+#include "nrf24l01.h"
+#include "LED_RED.h"
+#include "LED_GREEN.h"
 /* Including shared modules, which are used for whole project */
 #include "PE_Types.h"
 #include "PE_Error.h"

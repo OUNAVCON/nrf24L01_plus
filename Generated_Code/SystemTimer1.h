@@ -7,7 +7,7 @@
 **     Version     : Component 01.164, Driver 01.11, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-10-12, 16:08, # CodeGen: 0
+**     Date/Time   : 2017-10-15, 17:26, # CodeGen: 5
 **     Abstract    :
 **          This TimerUnit component provides a low level API for unified hardware access across
 **          various timer devices using the Prescaler-Counter-Compare-Capture timer structure.
@@ -28,8 +28,8 @@
 **              Interrupt priority                         : medium priority
 **          Channel list                                   : 0
 **          Initialization                                 : 
-**            Enabled in init. code                        : no
-**            Auto initialization                          : no
+**            Enabled in init. code                        : yes
+**            Auto initialization                          : yes
 **            Event mask                                   : 
 **              OnCounterRestart                           : Enabled
 **              OnChannel0                                 : Disabled
@@ -138,6 +138,9 @@ extern "C" {
 /*! Peripheral base address of a device allocated by the component. This constant can be used directly in PDD macros. */
 #define SystemTimer1_PRPH_BASE_ADDRESS  0xE000E010U
   
+/*! Device data structure pointer used when auto initialization property is enabled. This constant can be passed as a first parameter to all component's methods. */
+#define SystemTimer1_DeviceData  ((LDD_TDeviceData *)PE_LDD_GetDeviceStructure(PE_LDD_COMPONENT_SystemTimer1_ID))
+
 /* Methods configuration constants - generated for all enabled component's methods */
 #define SystemTimer1_Init_METHOD_ENABLED /*!< Init method of the component SystemTimer1 is enabled (generated) */
 #define SystemTimer1_Deinit_METHOD_ENABLED /*!< Deinit method of the component SystemTimer1 is enabled (generated) */

@@ -37,6 +37,9 @@
 #include "MQX1.h"
 #include "SystemTimer1.h"
 #include "SM1.h"
+#include "nrf24l01.h"
+#include "LED_RED.h"
+#include "LED_GREEN.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -58,6 +61,22 @@ extern "C" {
 */
 void task_idle(uint32_t task_init_data);
 
+
+/*
+** ===================================================================
+**     Event       :  NRF_task (module mqx_tasks)
+**
+**     Component   :  Task2 [MQXLite_task]
+**     Description :
+**         MQX task routine. The routine is generated into mqx_tasks.c
+**         file.
+**     Parameters  :
+**         NAME            - DESCRIPTION
+**         task_init_data  - 
+**     Returns     : Nothing
+** ===================================================================
+*/
+void NRF_task(uint32_t task_init_data);
 
 /* END mqx_tasks */
 

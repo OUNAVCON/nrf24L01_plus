@@ -6,7 +6,7 @@
 **     Version     : Component 01.110, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-10-12, 16:08, # CodeGen: 0
+**     Date/Time   : 2017-10-15, 17:26, # CodeGen: 5
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -53,9 +53,11 @@
 #define __task_template_list_h__
 
 /* MQX Lite task IDs */
-#define TASK_IDLE_TASK       1U
+#define NRF_TASK             1U
+#define TASK_IDLE_TASK       2U
 
 /* MQX Lite task stack sizes */
+#define NRF_TASK_STACK_SIZE  (sizeof(TD_STRUCT) + 512 + PSP_STACK_ALIGNMENT + 1)
 #define TASK_IDLE_TASK_STACK_SIZE (sizeof(TD_STRUCT) + 512 + PSP_STACK_ALIGNMENT + 1)
 
 

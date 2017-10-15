@@ -244,8 +244,8 @@ registers of the peripheral(s) configured by the component.
 **              Interrupt priority                         : medium priority
 **          Channel list                                   : 0
 **          Initialization                                 : 
-**            Enabled in init. code                        : no
-**            Auto initialization                          : no
+**            Enabled in init. code                        : yes
+**            Auto initialization                          : yes
 **            Event mask                                   : 
 **              OnCounterRestart                           : Enabled
 **              OnChannel0                                 : Disabled

@@ -170,14 +170,12 @@
 			</tr>
 			<tr>
 				<td>23</td><td>PTA1/UART0_RX/FTM0_CH6/JTAG_TDI/EZP_DI</td><td>J1_8</td>
-				<td bgcolor='#DDC7B5'>JTAG</td><td bgcolor='#DDC7B5'>jtag_di</td><td bgcolor='#DDC7B5'>alt7</td><td bgcolor='#DDC7B5'>Input</td>
+				<td bgcolor='#F7DCFF'>PTA</td><td bgcolor='#F7DCFF'>port1</td><td bgcolor='#F7DCFF'>alt1</td><td bgcolor='#F7DCFF'>Input</td>
 			</tr>
 			<tr>
-				<td rowspan='3'>24</td><td rowspan='3'>PTA2/UART0_TX/FTM0_CH7/JTAG_TDO/TRACE_SWO/EZP_DO</td><td rowspan='3'>J1_12</td>
-				<td bgcolor='#DDC7B5'>JTAG</td><td bgcolor='#DDC7B5'>jtag_do</td><td bgcolor='#DDC7B5'>alt7</td><td bgcolor='#DDC7B5'>Output</td>
+				<td>24</td><td>PTA2/UART0_TX/FTM0_CH7/JTAG_TDO/TRACE_SWO/EZP_DO</td><td>J1_12</td>
+				<td bgcolor='#F7DCFF'>PTA</td><td bgcolor='#F7DCFF'>port2</td><td bgcolor='#F7DCFF'>alt1</td><td bgcolor='#F7DCFF'>Output</td>
 			</tr>
-			<tr bgcolor='#CCB6A0'><td>TPIU</td><td>tpiu_swo</td><td>alt7</td><td>Output</td></tr>
-			<tr bgcolor='#969696'><td>non-peripheral</td><td>TRACE_SWO</td><td>alt7</td><td>Not Specified</td></tr>
 			<tr>
 				<td>25</td><td>PTA3/UART0_RTS_b/FTM0_CH0/JTAG_TMS/SWD_DIO</td><td>J9_2/SWD_DIO_TGTMCU/J12_2</td>
 				<td bgcolor='#DDC7B5'>JTAG</td><td bgcolor='#DDC7B5'>jtag_ms</td><td bgcolor='#DDC7B5'>alt7</td><td bgcolor='#DDC7B5'>Input/Output</td>
@@ -1314,14 +1312,12 @@
 			</tr>
 			<tr>
 				<td>23</td><td>PTA1/UART0_RX/FTM0_CH6/JTAG_TDI/EZP_DI</td><td>J1_8</td>
-				<td bgcolor='#DDC7B5'>JTAG</td><td bgcolor='#DDC7B5'>jtag_di</td><td bgcolor='#DDC7B5'>alt7</td><td bgcolor='#DDC7B5'>Input</td>
+				<td bgcolor='#F7DCFF'>PTA</td><td bgcolor='#F7DCFF'>port1</td><td bgcolor='#F7DCFF'>alt1</td><td bgcolor='#F7DCFF'>Input</td>
 			</tr>
 			<tr>
-				<td rowspan='3'>24</td><td rowspan='3'>PTA2/UART0_TX/FTM0_CH7/JTAG_TDO/TRACE_SWO/EZP_DO</td><td rowspan='3'>J1_12</td>
-				<td bgcolor='#DDC7B5'>JTAG</td><td bgcolor='#DDC7B5'>jtag_do</td><td bgcolor='#DDC7B5'>alt7</td><td bgcolor='#DDC7B5'>Output</td>
+				<td>24</td><td>PTA2/UART0_TX/FTM0_CH7/JTAG_TDO/TRACE_SWO/EZP_DO</td><td>J1_12</td>
+				<td bgcolor='#F7DCFF'>PTA</td><td bgcolor='#F7DCFF'>port2</td><td bgcolor='#F7DCFF'>alt1</td><td bgcolor='#F7DCFF'>Output</td>
 			</tr>
-			<tr bgcolor='#CCB6A0'><td>TPIU</td><td>tpiu_swo</td><td>alt7</td><td>Output</td></tr>
-			<tr bgcolor='#969696'><td>non-peripheral</td><td>TRACE_SWO</td><td>alt7</td><td>Not Specified</td></tr>
 			<tr>
 				<td>25</td><td>PTA3/UART0_RTS_b/FTM0_CH0/JTAG_TMS/SWD_DIO</td><td>J9_2/SWD_DIO_TGTMCU/J12_2</td>
 				<td bgcolor='#DDC7B5'>JTAG</td><td bgcolor='#DDC7B5'>jtag_ms</td><td bgcolor='#DDC7B5'>alt7</td><td bgcolor='#DDC7B5'>Input/Output</td>

@@ -8,7 +8,7 @@
 **     Repository  : Kinetis
 **     Datasheet   : K22P121M120SF7RM, Rev. 1, March 24, 2014
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-10-12, 16:08, # CodeGen: 0
+**     Date/Time   : 2017-10-15, 18:04, # CodeGen: 7
 **     Abstract    :
 **
 **     Settings    :
@@ -213,6 +213,10 @@ void Common_Init(void)
 #if CPU_COMPONENTS_INIT
 void Components_Init(void)
 {
+  /* ### TimerUnit_LDD "SystemTimer1" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)SystemTimer1_Init(NULL);
+  /* ### GPIO_LDD "LED_GREEN" component auto initialization. Auto initialization feature can be disabled by component property "Auto initialization". */
+  (void)LED_GREEN_Init(NULL);
 }
 #endif /* CPU_COMPONENTS_INIT */
 

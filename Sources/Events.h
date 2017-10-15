@@ -37,6 +37,9 @@
 #include "MQX1.h"
 #include "SystemTimer1.h"
 #include "SM1.h"
+#include "nrf24l01.h"
+#include "LED_RED.h"
+#include "LED_GREEN.h"
 
 #ifdef __cplusplus
 extern "C" {

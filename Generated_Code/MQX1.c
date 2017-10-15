@@ -6,7 +6,7 @@
 **     Version     : Component 01.110, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-10-12, 16:08, # CodeGen: 0
+**     Date/Time   : 2017-10-15, 17:26, # CodeGen: 5
 **     Abstract    :
 **         MQX Lite RTOS Adapter component.
 **     Settings    :
@@ -61,10 +61,12 @@
 
 
 /* Task stacks definition */
+uint8_t NRF_task_stack[NRF_TASK_STACK_SIZE];
 uint8_t task_idle_task_stack[TASK_IDLE_TASK_STACK_SIZE];
 
 /* Task stacks array of pointers */
 const uint8_t * mqx_task_stack_pointers[] = {
+/* "NRF" task                          */  NRF_task_stack,
 /* "task_idle" task                    */  task_idle_task_stack,
 /* Stack array end                     */  NULL
 };

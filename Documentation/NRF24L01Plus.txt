@@ -28,6 +28,8 @@ Module "pin_mux"   (component PinSettings)
    - pin_mux_configure_uart_pins -UART method sets registers according routing settings. Call this method code to route desired 
                 pins into UART0, UART1, UART2 peripherals.
 
+Module "Task2"     (component MQXLite_task)
+
 Module "MQX1"      (component MQXLite)
    - MQX1__int_default_isr -Default ISR that MQX calls if an unhandled interrupt or exception occurs.
    - MQX1__int_disable -The function _int_disable() disables all hardware interrupts at priorities up to and including the MQX 
@@ -36,13 +38,13 @@ Module "MQX1"      (component MQXLite)
                 the state of the interrupts (disabled or enabled) depends on the interrupt-disabled state of the next task that 
                 MQX makes ready.
    - MQX1__int_enable -The function _int_enable() resets the processor priority to the hardware priority that corresponds to 
-                the active task’s software priority.
+                the active taskâ€™s software priority.
    - MQX1__int_exception_isr -To provide support for exception handlers, applications can use this ISR to replace the default 
                 ISR. The ISR is specific to the PSP.   An application calls _int_install_exception_isr() to install 
                 _int_exception_isr().   The function _int_exception_isr() does the following:   If an exception occurs when a 
                 task is running and a task exception ISR exists, MQX runs the ISR;   If a task exception ISR does not exist, 
                 MQX aborts the task by calling _task_abort().   If an exception occurs when an ISR is running and an ISR 
-                exception ISR exists, MQX aborts the   running ISR and runs the ISR’s exception ISR.   The function walks the 
+                exception ISR exists, MQX aborts the   running ISR and runs the ISRâ€™s exception ISR.   The function walks the 
                 interrupt stack looking for information about the ISR or task that was   running before the exception occurred. 
                 If the function determines that the interrupt stack contains   incorrect information, it calls 
                 _mqx_fatal_error() with error code MQX_CORRUPT_INTERRUPT_STACK.
@@ -82,7 +84,7 @@ Module "MQX1"      (component MQXLite)
    - MQX1__klog_create_at -
    - MQX1__klog_get_interrupt_stack_usage -Gets the size of the interrupt stack and the total amount of it used.
    - MQX1__klog_get_task_stack_usage -Gets the size of the interrupt stack and the total amount of it used.   The amount used 
-                is a highwater mark—the highest amount of interrupt stack that the application has used   so far. It shows only 
+                is a highwater markâ€”the highest amount of interrupt stack that the application has used   so far. It shows only 
                 how much of the stack has been written to at this point. If the amount is 0, the interrupt   stack is not large 
                 enough.
    - MQX1__klog_control -Controls logging in kernel log.   The application must first create kernel log with _klog_create().   
@@ -136,7 +138,7 @@ Module "MQX1"      (component MQXLite)
    - MQX1__sched_yield -Puts the active task at the end of its ready queue. The function effectively performs a timeslice. If 
                 there are no other tasks in this ready queue, the task continues to be the active task.
    - MQX1__task_abort -Makes a task run its task exit handler and then destroys itself.
-   - MQX1__task_block -Blocks the active task. The function removes the active task from the task’s ready queue and sets the 
+   - MQX1__task_block -Blocks the active task. The function removes the active task from the taskâ€™s ready queue and sets the 
                 BLOCKED bit in the STATE field of the task descriptor. The task does not run again until another task 
                 explicitly makes it ready with _task_ready().
    - MQX1__task_check_stack -Determines whether the stack for the active task is currently out of bounds.   The function 
@@ -268,6 +270,33 @@ Module "SM1"       (component SPIMaster_LDD)
                 event). This method finishes immediately after calling it - it doesn't wait the end of data reception. Use 
                 event <OnBlockReceived> to check the end of data reception or method GetReceivedDataNum to check the state of 
                 receiving.
+
+Module "nrf24l01"  (component GPIO_LDD)
+   - nrf24l01_Init -This method initializes the associated peripheral(s) and the component internal variables. The method is 
+                called automatically as a part of the application initialization code.
+   - nrf24l01_SetFieldValue -This method sets the output data value of the specified bit field.
+   - nrf24l01_GetFieldValue -This method returns the current input data of the specified field.
+   - nrf24l01_ClearFieldBits -This method drives the specified bits of the specified bit field to the inactive level.
+   - nrf24l01_SetFieldBits -This method drives the specified bits of the specified bit field to the active level.
+   - nrf24l01_ToggleFieldBits -This method inverts the specified bits of the specified bit field to other level.
+
+Module "LED_RED"   (component GPIO_LDD)
+   - LED_RED_Init -This method initializes the associated peripheral(s) and the component internal variables. The method is 
+                called automatically as a part of the application initialization code.
+   - LED_RED_SetFieldValue -This method sets the output data value of the specified bit field.
+   - LED_RED_GetFieldValue -This method returns the current input data of the specified field.
+   - LED_RED_ClearFieldBits -This method drives the specified bits of the specified bit field to the inactive level.
+   - LED_RED_SetFieldBits -This method drives the specified bits of the specified bit field to the active level.
+   - LED_RED_ToggleFieldBits -This method inverts the specified bits of the specified bit field to other level.
+
+Module "LED_GREEN" (component GPIO_LDD)
+   - LED_GREEN_Init -This method initializes the associated peripheral(s) and the component internal variables. The method is 
+                called automatically as a part of the application initialization code.
+   - LED_GREEN_SetFieldValue -This method sets the output data value of the specified bit field.
+   - LED_GREEN_GetFieldValue -This method returns the current input data of the specified field.
+   - LED_GREEN_ClearFieldBits -This method drives the specified bits of the specified bit field to the inactive level.
+   - LED_GREEN_SetFieldBits -This method drives the specified bits of the specified bit field to the active level.
+   - LED_GREEN_ToggleFieldBits -This method inverts the specified bits of the specified bit field to other level.
 
 Module "Cpu"       (component MK22FN512LH12)
    - Cpu_SetClockConfiguration -Calling of this method will cause the clock configuration change and reconfiguration of all 

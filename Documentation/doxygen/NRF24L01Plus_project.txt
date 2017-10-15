@@ -28,6 +28,9 @@
 \page page_components Components 
 - \subpage SystemTimer1
 - \subpage SM1
+- \subpage nrf24l01
+- \subpage LED_RED
+- \subpage LED_GREEN
 
 */
 
@@ -62,6 +65,9 @@
 \page page_components Components 
 - \subpage SystemTimer1
 - \subpage SM1
+- \subpage nrf24l01
+- \subpage LED_RED
+- \subpage LED_GREEN
 
 */
 

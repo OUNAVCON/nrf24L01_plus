@@ -6,7 +6,7 @@
 **     Version     : Component 01.110, Driver 01.00, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-10-12, 16:08, # CodeGen: 0
+**     Date/Time   : 2017-10-15, 17:26, # CodeGen: 5
 **
 **     Copyright : 1997 - 2015 Freescale Semiconductor, Inc. 
 **     All Rights Reserved.
@@ -56,6 +56,16 @@
 /* MQX task template list */
 const TASK_TEMPLATE_STRUCT MQX_template_list[] =
 {
+  /* Task: NRF */
+  {
+  /* Task number                      */  NRF_TASK,
+  /* Entry point                      */  (TASK_FPTR)NRF_task,
+  /* Stack size                       */  NRF_TASK_STACK_SIZE,
+  /* Task priority                    */  8U,
+  /* Task name                        */  "nrf",
+  /* Task attributes                  */  (MQX_AUTO_START_TASK),
+  /* Task parameter                   */  (uint32_t)(0)
+  },
   /* Task: task_idle */
   {
   /* Task number                      */  TASK_IDLE_TASK,

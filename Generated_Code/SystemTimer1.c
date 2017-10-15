@@ -7,7 +7,7 @@
 **     Version     : Component 01.164, Driver 01.11, CPU db: 3.00.000
 **     Repository  : Kinetis
 **     Compiler    : GNU C Compiler
-**     Date/Time   : 2017-10-12, 16:08, # CodeGen: 0
+**     Date/Time   : 2017-10-15, 17:26, # CodeGen: 5
 **     Abstract    :
 **          This TimerUnit component provides a low level API for unified hardware access across
 **          various timer devices using the Prescaler-Counter-Compare-Capture timer structure.
@@ -28,8 +28,8 @@
 **              Interrupt priority                         : medium priority
 **          Channel list                                   : 0
 **          Initialization                                 : 
-**            Enabled in init. code                        : no
-**            Auto initialization                          : no
+**            Enabled in init. code                        : yes
+**            Auto initialization                          : yes
 **            Event mask                                   : 
 **              OnCounterRestart                           : Enabled
 **              OnChannel0                                 : Disabled
@@ -182,7 +182,7 @@ LDD_TDeviceData* SystemTimer1_Init(LDD_TUserData *UserDataPtr)
               ));
   /* SYST_CSR: ??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,COUNTFLAG=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,??=0,CLKSOURCE=0,TICKINT=1,ENABLE=0 */
   SYST_CSR = SysTick_CSR_TICKINT_MASK; /* Set up control register */
-  DeviceDataPrv->EnUser = FALSE;       /* Set the flag "device disabled" */
+  DeviceDataPrv->EnUser = TRUE;        /* Set the flag "device enabled" */
   SystemTimer1_SetClockConfiguration(DeviceDataPrv, Cpu_GetClockConfiguration()); /* Set Initial according clock configuration */
   /* Registration of the device structure */
   PE_LDD_RegisterDeviceStructure(PE_LDD_COMPONENT_SystemTimer1_ID,DeviceDataPrv);
